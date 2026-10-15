@@ -1,0 +1,237 @@
+/* ---------- Reset and base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f2f4f8;
+}
+
+/* ---------- Header ---------- */
+header {
+  background-color: #1f3a5f;
+  color: #fff;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+header h1 {
+  margin: 0 0 8px;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/* ---------- Main area ---------- */
+main {
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+section {
+  background-color: #fff;
+  padding: 24px;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 16px;
+  color: #555;
+}
+
+/* ---------- Form (Flexbox) ---------- */
+#note-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field-grow {
+  flex: 1;
+  min-width: 200px;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+input,
+select {
+  padding: 10px;
+  font: inherit;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  width: 100%;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #1f3a5f;
+  border-color: #1f3a5f;
+}
+
+#error-message {
+  color: #b00020;
+  font-weight: 600;
+  margin: 12px 0 0;
+  min-height: 1.5em;
+}
+
+/* ---------- Buttons ---------- */
+button {
+  background-color: #1f3a5f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #2f5d98;
+  transform: translateY(-2px);
+}
+
+.delete-btn {
+  background-color: #c0392b;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+}
+
+.delete-btn:hover,
+.delete-btn:focus {
+  background-color: #e74c3c;
+}
+
+/* ---------- Notes list and cards ---------- */
+#note-count {
+  color: #555;
+  margin: 12px 0;
+}
+
+#notes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.note {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-left-width: 6px;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.note-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.note-text {
+  margin: 4px 0;
+  overflow-wrap: anywhere;
+}
+
+.note-date {
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.note-category {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ---------- Category styles ---------- */
+.category-personal {
+  border-left-color: #2e8b57;
+  background-color: #eefaf2;
+}
+.category-personal .note-category {
+  background-color: #2e8b57;
+  color: #fff;
+}
+
+.category-work {
+  border-left-color: #d98200;
+  background-color: #fff6e8;
+}
+.category-work .note-category {
+  background-color: #d98200;
+  color: #fff;
+}
+
+.category-study {
+  border-left-color: #6a4bc4;
+  background-color: #f3effd;
+}
+.category-study .note-category {
+  background-color: #6a4bc4;
+  color: #fff;
+}
+
+/* ---------- Small screens ---------- */
+@media (max-width: 600px) {
+  header {
+    padding: 16px 12px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding: 16px;
+  }
+
+  #note-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .note {
+    flex-direction: column;
+  }
+
+  .delete-btn {
+    align-self: flex-end;
+  }
+}
